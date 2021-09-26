@@ -1,9 +1,10 @@
 import discord
-token = 'ODkxNTQ0OTUyMDUwNDI5OTUy.YU_58A.nWYJHmErKZ5Z3O0nsPH-rL4IfOA'
+import os
 client = discord.Client()
 
 @client.event
 async def on_message(message):
     if message.content == "/핑":
         await message.channel.send("pong")
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
